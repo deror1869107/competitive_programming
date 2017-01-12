@@ -1,9 +1,6 @@
 #include <iostream>
-#include <utility>
 #include <unordered_set>
 #include <map>
-#include <cassert>
-#include <cstdlib>
 
 using namespace std;
 
@@ -13,9 +10,7 @@ void qs(const unordered_set<int>& bulb, const unordered_set<int>& holder, int t)
 {
     if(bulb.size() == 0) return;
     unordered_set<int> bulb_small, bulb_big, holder_small, holder_big;
-    auto it = bulb.begin();
-    advance( it, rand() % bulb.size() );
-    int pivot_bulb = *it, pivot_holder;
+    int pivot_bulb = *bulb.begin(), pivot_holder;
     for(auto i : holder){
         int cmp_result;
         cout << "C " << pivot_bulb << " " << i << endl;
@@ -45,7 +40,6 @@ void qs(const unordered_set<int>& bulb, const unordered_set<int>& holder, int t)
 
 int main()
 {
-    srand(time(NULL));
     cin.sync_with_stdio(0);
     cin.tie(0);
     int N;
