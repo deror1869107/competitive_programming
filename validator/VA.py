@@ -4,7 +4,7 @@ from subprocess import Popen, PIPE
 
 bulb = None
 holder = None
-TIME_LIMIT = 5
+TIME_LIMIT = 6
 
 def cmp(a, b):
     x = bulb[a - 1] - holder[b - 1]
@@ -39,7 +39,7 @@ try:
             input = cmp(int(output[1]), int(output[2]))
             proc.stdin.write("{}\n".format(input))
             output = proc.stdout.readline().strip().split(' ')
-        
+
         if output[0] == 'A':
             output = [int(i) for i in proc.stdout.read().strip().split("\n")]
 
@@ -50,9 +50,9 @@ try:
         print("AC 1.0")
         print("Query Times: {}".format(query))
         print("Total Time: {:.3f}s".format(end - start))
-    else: 
+    else:
         print("WA 0.0")
-    
+
 except TimeoutError:
     print("TLE")
 

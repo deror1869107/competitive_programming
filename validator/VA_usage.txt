@@ -1,0 +1,4 @@
+VA.py usage:
+./VA.py testdata execution
+Ex:
+./VA.py ../testdata/PA.in.10000.txt a.out
